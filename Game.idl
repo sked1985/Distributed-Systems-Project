@@ -1,0 +1,7 @@
+module GameApp{
+	interface Game{
+		string player1();
+		string player2();
+		boolean chooseNumber(in long option);
+	};
+};
