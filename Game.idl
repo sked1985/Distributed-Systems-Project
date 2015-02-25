@@ -1,7 +1,9 @@
 module GameApp{
 	interface Game{
-		string player1();
-		string player2();
-		boolean chooseNumber(in long option);
+		string player1(in string name1);
+		string player2(in string name2);
+		string register(in string username);
+		string chooseMove(in string option);
+		boolean playAgain(in long choice);
 	};
 };
