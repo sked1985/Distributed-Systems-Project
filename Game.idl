@@ -1,9 +1,14 @@
-module GameApp{
-	interface Game{
-		string player1(in string name1);
-		string player2(in string name2);
-		string register(in string username);
-		string chooseMove(in string option);
-		boolean playAgain(in long choice);
-	};
+// Game.idl
+module Game
+{
+    interface Member
+    {
+        oneway void callBack(in string message);
+    };
+    
+    interface GameRoom
+    {
+	oneway void registerCB(in Member m, in string name);
+	oneway void chat(in string c, in string name) ;
+    };
 };

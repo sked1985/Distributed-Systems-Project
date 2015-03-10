@@ -6,9 +6,8 @@ class GameServant implements GameRoomOperations
 	String[] names ;
 	int numberMembers ;
 
-
 	GameServant() {
-		membhers = new Member[10] ;
+		members = new Member[10] ;
 		names = new String[10] ;
 		numberMembers = 0 ;
 	}
