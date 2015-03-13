@@ -1,6 +1,11 @@
 // Game.idl
 module Game
 {
+	struct playerDetails{
+		string playerName;
+		string UniqueID;
+	};
+		
     interface Member
     {
         oneway void callBack(in string message);
@@ -8,7 +13,8 @@ module Game
     
     interface GameRoom
     {
-	oneway void registerCB(in Member m, in string name);
-	oneway void chat(in string c, in string name) ;
+	 void registerForGame(in any anyPlayerDetails, out string password);
+	 void game(in string UniqueID, in long choice) ;
+	 playerDetails getPlayerInfo(in string UniqueID);
     };
 };

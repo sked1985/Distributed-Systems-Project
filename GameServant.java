@@ -1,22 +1,44 @@
+import java.io.*;
+import java.util.*;
+//Import Game module
 import Game.*;
+import java.util.Date.*;
 
-class GameServant implements GameRoomOperations
+//Game Servant
+public class GameServant implements GameRoomOperations
 {
+	public static Hashtable hashtable;
+	public static ORB orb;
+	public static String UniqueID;
+	public static Integer ID_Counter;
 	Member[] members ;
 	String[] names ;
 	int numberMembers ;
 
 
-	GameServant() {
-		membhers = new Member[10] ;
-		names = new String[10] ;
-		numberMembers = 0 ;
+	public GameServant(org.omg.CORBA.ORB orb){
+		hashtable = new Hashtable();
+		this.orb = orb;
+		playerDetails GAMEplayerDetails = new playerDetails();
+		GAMEplayerDetails.PlayerName = "JOE";
+		GAMEplayerDetails.UniqueID = GAMEID;
+
+		//members = new Member[10] ;
+		//names = new String[10] ;
+		//numberMembers = 0 ;
+
+
+
+		ID_Counter =0;
+
+		hashtable.put(GAMEplayerDetails.UniqueID, GAMEplayerDetails);
+
 	}
 
-	public void registerCB(Member m, String name) {
-		members[numberMembers] = m ;
-		names[numberMembers] = name ;
-
+	//Register for the game
+	public void registerForGame(org.omg.CORBA.Any anyPlayerDetails, StringHolder password) {
+		String timestamp=new Date().toString();
+		UniqueID = Integer.toString(++ID_Counter);
 		for (int i=0; i<numberMembers; i++) {
 			members[i].callBack("New Member: " + name) ;
 		}
@@ -26,11 +48,13 @@ class GameServant implements GameRoomOperations
 
 	}
 
-	public void chat(String c, String name) {
-		System.out.println(name + " said: " + c);
-		String s = "Message from " + name + ": " + c  ;
+	public void game(String g, String name) {
+		System.out.println(name + " said: " + g);
+		String s = "Message from " + name + ": " + g  ;
 		for (int i=0; i<numberMembers; i++)	{
 			members[i].callBack(s) ;
 		}
 	}
+
+	public void getPlayer
 }
