@@ -2,15 +2,15 @@
 module Game
 {
 	struct playerDetails{
-		string playerName;
+		string PlayerName;
 		string UniqueID;
 	};
-		
+
     interface Member
     {
         oneway void callBack(in string message);
     };
-    
+
     interface GameRoom
     {
 	 void registerForGame(in any anyPlayerDetails, out string password);
