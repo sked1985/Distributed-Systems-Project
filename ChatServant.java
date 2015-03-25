@@ -7,21 +7,36 @@ class ChatServant implements ChatRoomOperations
 	String[] names ;
 	int numberMembers ;
 
+
 	ChatServant() {
 		members = new Member[10] ;
 		names = new String[10] ;
 		numberMembers = 0 ;
+
 	}
 
 //Method for registering for the game
-	public void registerCB(Member m, String name) {
+	public void registerCB(Member m, String name, String player1, String player2) {
 		members[numberMembers] = m ;
 		names[numberMembers] = name ;
 
+
 		for (int i=0; i<numberMembers; i++) {
 			members[i].callBack("New Member: " + name) ;
+			if(numberMembers == 1){
+				player1 = name;
+			}else if(numberMembers == 2){
+				player2 = name;
+			}
 		}
 		numberMembers++ ;
+		System.out.println("????????????" +player1);
+		System.out.println("!!!!!!!!!!!" + player2);
+		if(numberMembers ==1){
+			System.out.println("player1");
+		}else if(numberMembers == 2){
+			System.out.println("player2");
+		}
 		m.callBack("Thank you " + name + ", you are now registered");
 		System.out.println(name + " has just joined the chat room.");
 		System.out.println(numberMembers + "Total amount of players ");
