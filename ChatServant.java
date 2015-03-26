@@ -16,22 +16,15 @@ class ChatServant implements ChatRoomOperations
 	}
 
 //Method for registering for the game
-	public void registerCB(Member m, String name, String player1, String player2) {
+	public void registerCB(Member m, String name) {
 		members[numberMembers] = m ;
 		names[numberMembers] = name ;
 
 
 		for (int i=0; i<numberMembers; i++) {
 			members[i].callBack("New Member: " + name) ;
-			if(numberMembers == 1){
-				player1 = name;
-			}else if(numberMembers == 2){
-				player2 = name;
-			}
 		}
 		numberMembers++ ;
-		System.out.println("????????????" +player1);
-		System.out.println("!!!!!!!!!!!" + player2);
 		if(numberMembers ==1){
 			System.out.println("player1");
 		}else if(numberMembers == 2){
