@@ -10,7 +10,6 @@ module Chat
     {
 	oneway void registerCB(in Member m, in string name);
 	oneway void chat(in string c, in string name);
-	
-	
+	oneway void setChoice(in Member m, in long choice);
     };
 };

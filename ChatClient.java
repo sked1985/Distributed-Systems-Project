@@ -24,13 +24,12 @@ public class ChatClient {
 
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-			System.out.println("Please enter your name before entering the chat room:");
+			System.out.println("Please enter your name before entering the game room:");
 			String CustomerName=reader.readLine();
-
 			room.registerCB(m, CustomerName);
 
 			BufferedReader b = new BufferedReader(new InputStreamReader(System.in)) ;
-
+/*
 			do {
 				System.out.println("Enter Message:") ;
 				msg = b.readLine() ;
@@ -38,6 +37,10 @@ public class ChatClient {
 				if (msg == "exit")
 					System.out.println("msg="+msg) ;
 			} while (msg != "exit");
+			*/
+			String sChoice=reader.readLine();
+			int choice = Integer.parseInt(sChoice);
+			room.setChoice(m, choice);
 
 		} catch (Exception e) {
 	 	   	System.out.println("ERROR : " + e) ;
