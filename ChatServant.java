@@ -69,7 +69,6 @@ class ChatServant implements ChatRoomOperations
 
 		m.callBack("Thank you " + name + ", you are now registered");
 
-		System.out.println("player1");
 		System.out.println(name + " has just joined the game room.");
 		System.out.println(numberMembers + "Total amount of players ");
 		if (numberMembers ==2){
@@ -92,7 +91,7 @@ class ChatServant implements ChatRoomOperations
       for (Player player : players){
 		  if (player.getMember().equals(m)){
 			  player.setChoice(choice);
-			  m.callBack("Player " + player.getId() + ": " + player.getName() + " has choosen " + player.getChoice());
+			  System.out.println("Player " + player.getId() + ": " + player.getName() + " has choosen " + player.getChoice());
 			 break;
 		  }
 	  }
@@ -106,6 +105,8 @@ class ChatServant implements ChatRoomOperations
 	  }
 	  if (allChosen){
 		  //Do logic to check winner
+
+
 	  }
 
 	}
