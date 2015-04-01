@@ -96,15 +96,45 @@ class ChatServant implements ChatRoomOperations
 		  }
 	  }
 	  boolean allChosen = true;
+	  Player player1 = null;
+	  Player player2 = null;
+
 	  for (Player player : players){
+		  if (player.getId() == 1){
+		    player1 = player;
+		  }
+		  else if (player.getId() == 2){
+            player2 = player;
+		  }
 		  if (player.getChoice()==0){
 			  m.callBack("Player " + player.getId() + ": " + player.getName() + " has not yet choosen");
 			  allChosen = false;
 			  break;
 		  }
 	  }
+
 	  if (allChosen){
-		  //Do logic to check winner
+		   if (player1.getChoice()==player2.getChoice()) {
+		     System.out.println("It's a tie!");
+		  }
+		  else if (player1.getChoice()== ROCK) {
+		     if (player2.getChoice()==SCISSORS)
+		        System.out.println("Rock crushes scissors. Player 1 wins!!");
+		     else if (player2.getChoice()==PAPER)
+		          System.out.println("Paper eats rock. Player 2 wins!!");
+		  }
+		  else if (player1.getChoice()==PAPER) {
+		     if (player2.getChoice()==SCISSORS)
+		         System.out.println("Scissor cuts paper. Player 2 wins!!");
+		     else if (player2.getChoice()==ROCK)
+		          System.out.println("Paper eats rock. Player 1 wins!!");
+		  }
+		  else if (player1.getChoice()==SCISSORS) {
+		       if (player2.getChoice()==PAPER)
+		           System.out.println("Scissor cuts paper. Player 1 wins!!");
+		       else if (player2.getChoice()==ROCK)
+		          System.out.println("Rock breaks scissors. Player 2 wins!!");
+}
 
 
 	  }
