@@ -1,12 +1,12 @@
-// ChatClient.java
+// GameClient.java
 
-import Chat.* ;
+import Game.* ;
 import java.io.* ;
 import org.omg.CORBA.* ;
 import org.omg.CosNaming.*;
 import org.omg.CosNaming.NamingContextPackage.*;
 
-public class ChatClient {
+public class GameClient {
     public static void main(String[] args) {
 		String msg = "";
 		try {
@@ -16,9 +16,9 @@ public class ChatClient {
 			org.omg.CORBA.Object nameObj=orb.resolve_initial_references("NameService");
 			NamingContext rootCtx=NamingContextHelper.narrow(nameObj);
 			NameComponent[] name = new NameComponent[1];
-			name[0] = new NameComponent("Chatroom", "Object");
+			name[0] = new NameComponent("Gameroom", "Object");
 			org.omg.CORBA.Object obj = rootCtx.resolve(name);
-			ChatRoom room = ChatRoomHelper.narrow(obj);
+			GameRoom room = GameRoomHelper.narrow(obj);
 
   			Member m = new Member_Tie(new MemberImpl()) ;
 

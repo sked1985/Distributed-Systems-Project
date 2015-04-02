@@ -1,9 +1,9 @@
-//Import the chat module
-import Chat.*;
+//Import the game module
+import Game.*;
 import java.util.ArrayList;
 import java.util.List;
 
-class ChatServant implements ChatRoomOperations
+class GameServant implements GameRoomOperations
 {
 	List<Player> players = new ArrayList<Player>();
     int playerCounter = 0;
@@ -44,7 +44,7 @@ class ChatServant implements ChatRoomOperations
 	static int PAPER = 2;
 	static int SCISSORS = 3;
 
-	ChatServant() {
+	GameServant() {
 		members = new Member[10] ;
 		names = new String[10] ;
 		numberMembers = 0 ;
@@ -116,35 +116,46 @@ class ChatServant implements ChatRoomOperations
 	  if (allChosen){
 		   if (player1.getChoice()== player2.getChoice()) {
 		     System.out.println("It's a tie!");
-		     String f = "Lunatics";
-		     for (int i=0; i<numberMembers; i++) {
-				 Player.setChoice(choice);
-						members[i].callBack(f);
-			}
+				 allChosen = false;
+
+
 		  }
-		 } else if (player1.getChoice()== ROCK) {
-		     if (player2.getChoice()==SCISSORS){
+		  else if (player1.getChoice()== 1) {
+		     if (player2.getChoice()==3)
 		        System.out.println("Rock crushes scissors. Player 1 wins!!");
-		     }else if (player2.getChoice()==PAPER){
+
+
+		     else if (player2.getChoice()==2)
 		          System.out.println("Paper eats rock. Player 2 wins!!");
+
+				 allChosen = false;
+
 		  }
-		 } else if (player1.getChoice()==PAPER) {
-		     if (player2.getChoice()==SCISSORS){
+		  else if (player1.getChoice()==2) {
+		     if (player2.getChoice()==3)
 		         System.out.println("Scissor cuts paper. Player 2 wins!!");
-		     }else if (player2.getChoice()==ROCK){
+		     else if (player2.getChoice()==1)
 		          System.out.println("Paper eats rock. Player 1 wins!!");
+
+		          				 allChosen = false;
+
 		  }
-		 } else if (player1.getChoice()==SCISSORS) {
-		       if (player2.getChoice()==PAPER){
+		  else if (player1.getChoice()==3) {
+		       if (player2.getChoice()==2)
 		           System.out.println("Scissor cuts paper. Player 1 wins!!");
-		      } else if (player2.getChoice()==ROCK){
+		       else if (player2.getChoice()==1)
 		          System.out.println("Rock breaks scissors. Player 2 wins!!");
+
+		          				 allChosen = false;
+
+
+}
+
+}
 }
 }
 
-	  }
 
-	}
 
 //This is the method for the game
 	/*public void chat(String c, String name) {

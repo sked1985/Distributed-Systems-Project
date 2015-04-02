@@ -1,12 +1,12 @@
 // Game.idl
-module Chat
+module Game
 {
     interface Member
     {
         oneway void callBack(in string message);
     };
     
-    interface ChatRoom
+    interface GameRoom
     {
 	oneway void registerCB(in Member m, in string name);
 	oneway void setChoice(in Member m, in long choice);
