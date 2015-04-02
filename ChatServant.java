@@ -114,9 +114,13 @@ class ChatServant implements ChatRoomOperations
 	  }
 
 	  if (allChosen){
-		   if (player1.getChoice()==player2.getChoice()) {
+		   if (player1.getChoice()== player2.getChoice()) {
 		     System.out.println("It's a tie!");
-		     m.callBack("You are tripping " + player1 + " and " + player2);
+		     String f = "Lunatics";
+		     for (int i=0; i<numberMembers; i++) {
+				 Player.setChoice(choice);
+						members[i].callBack(f);
+			}
 		  }
 		 } else if (player1.getChoice()== ROCK) {
 		     if (player2.getChoice()==SCISSORS){
