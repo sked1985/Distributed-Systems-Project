@@ -116,37 +116,38 @@ class ChatServant implements ChatRoomOperations
 	  if (allChosen){
 		   if (player1.getChoice()==player2.getChoice()) {
 		     System.out.println("It's a tie!");
+		     m.callBack("You are tripping " + player1 + " and " + player2);
 		  }
-		  else if (player1.getChoice()== ROCK) {
-		     if (player2.getChoice()==SCISSORS)
+		 } else if (player1.getChoice()== ROCK) {
+		     if (player2.getChoice()==SCISSORS){
 		        System.out.println("Rock crushes scissors. Player 1 wins!!");
-		     else if (player2.getChoice()==PAPER)
+		     }else if (player2.getChoice()==PAPER){
 		          System.out.println("Paper eats rock. Player 2 wins!!");
 		  }
-		  else if (player1.getChoice()==PAPER) {
-		     if (player2.getChoice()==SCISSORS)
+		 } else if (player1.getChoice()==PAPER) {
+		     if (player2.getChoice()==SCISSORS){
 		         System.out.println("Scissor cuts paper. Player 2 wins!!");
-		     else if (player2.getChoice()==ROCK)
+		     }else if (player2.getChoice()==ROCK){
 		          System.out.println("Paper eats rock. Player 1 wins!!");
 		  }
-		  else if (player1.getChoice()==SCISSORS) {
-		       if (player2.getChoice()==PAPER)
+		 } else if (player1.getChoice()==SCISSORS) {
+		       if (player2.getChoice()==PAPER){
 		           System.out.println("Scissor cuts paper. Player 1 wins!!");
-		       else if (player2.getChoice()==ROCK)
+		      } else if (player2.getChoice()==ROCK){
 		          System.out.println("Rock breaks scissors. Player 2 wins!!");
 }
-
+}
 
 	  }
 
 	}
 
 //This is the method for the game
-	public void chat(String c, String name) {
+	/*public void chat(String c, String name) {
 		System.out.println(name + " said: " + c);
 		String s = "Message from " + name + ": " + c  ;
 		/*for (int i=0; i<numberMembers; i++)	{
 			members[i].callBack(s) ;
-		}*/
+		}
 	}
-}
+}*/
