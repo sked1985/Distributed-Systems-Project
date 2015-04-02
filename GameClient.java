@@ -27,16 +27,15 @@ public class GameClient {
 			System.out.println("Please enter your name before entering the game room:");
 			String CustomerName=reader.readLine();
 			room.registerCB(m, CustomerName);
-
+			//play game
 			do {
 				System.out.println("Game on , choose option: 1:Rock 2:Paper 3:Scissors 4:Exit");
-
+				//user input
 				String sChoice=reader.readLine();
 				int choice = Integer.parseInt(sChoice);
 				room.setChoice(m, choice);
 
-				if (msg == "exit")
-					System.out.println("msg="+msg) ;
+
 			} while (msg != "exit");
 
 

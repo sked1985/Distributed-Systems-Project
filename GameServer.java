@@ -22,11 +22,7 @@ public class GameServer {
 			NameComponent[] name = new NameComponent[1];
 			name[0] = new NameComponent("Gameroom", "Object");
 			rootCtx.rebind(name,c);
-/*
-	    	ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("IOR")) ;
-	    	out.writeObject(orb.object_to_string(c)) ;
-			out.close() ;
-*/
+
 			System.out.println("The Game Room is now open for new players ...") ;
 			orb.run();
 
